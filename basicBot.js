@@ -839,8 +839,8 @@
             var newMedia = obj.media;
             if (basicBot.settings.timeGuard && newMedia.duration > basicBot.settings.maximumSongLength * 60 && !basicBot.room.roomevent) {
                 var name = obj.dj.username;
-				var min = Math.floor(basicBot.settings.maximumSongLength);
-				var sec = Math.floor((min - basicBot.settings.maximumSongLength) * -60);
+		var min = Math.floor(basicBot.settings.maximumSongLength);
+		var sec = Math.floor((min - basicBot.settings.maximumSongLength) * -60);
                 API.sendChat(subChat(basicBot.chat.timelimit, {name: name, maxlengthmin: min, maxlengthsec: sec}));
                 API.moderateForceSkip();
             }
