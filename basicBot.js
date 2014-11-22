@@ -18,7 +18,7 @@
         localStorage.setItem("basicBotRoom", JSON.stringify(basicBot.room));
         var basicBotStorageInfo = {
             time: Date.now(),
-            stored: false,
+            stored: true,
             version: basicBot.version
         };
         localStorage.setItem("basicBotStorageInfo", JSON.stringify(basicBotStorageInfo));
@@ -235,7 +235,7 @@
             usercommand: true,
             allcommand: true,
             afkInterval: null,
-            autoskip: true,
+            autoskip: false,
             autoskipTimer: null,
             autodisableInterval: null,
             autodisableFunc: function () {
@@ -822,7 +822,7 @@
                 }
             }
 
-            var alreadyPlayed = true;
+            var alreadyPlayed = false;
             for (var i = 0; i < basicBot.room.historyList.length; i++) {
                 if (basicBot.room.historyList[i][0] === obj.media.cid) {
                     var firstPlayed = basicBot.room.historyList[i][1];
@@ -839,7 +839,9 @@
             var newMedia = obj.media;
             if (basicBot.settings.timeGuard && newMedia.duration > basicBot.settings.maximumSongLength * 60 && !basicBot.room.roomevent) {
                 var name = obj.dj.username;
-                API.sendChat(subChat(basicBot.chat.timelimit, {name: name, maxlength: basicBot.settings.maximumSongLength}));
+				var min = Math.floor(basicBot.settings.maximumSongLength);
+				var sec = Math.floor((min - basicBot.settings.maximumSongLength) * -60);
+                API.sendChat(subChat(basicBot.chat.timelimit, {name: name, maxlengthmin: min, maxlengthsec: sec}));
                 API.moderateForceSkip();
             }
             if (user.ownSong) {
