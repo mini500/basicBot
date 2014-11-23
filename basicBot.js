@@ -770,7 +770,7 @@
         },
         eventVoteupdate: function (obj) {
             if(basicBot.settings.mehSkip && API.getScore().negative >= basicBot.settings.mehSkipLimit) {
-            	API.sendChat(subchat(basicBot.chat.mehSkip, {mehLimit: basicBot.settings.mehSkipLimit}));
+            	API.sendChat(subchat(basicBot.chat.mehSkip, {name: API.getDJ().username, mehLimit: basicBot.settings.mehSkipLimit}));
             	return API.moderateForceSkip();
             }
             for (var i = 0; i < basicBot.room.users.length; i++) {
