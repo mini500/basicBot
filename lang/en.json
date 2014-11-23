@@ -134,5 +134,5 @@
     "youtube": "/me [%%NAME%%] Subscribe to us on youtube: %%LINK%%",
     "songstatistics": "/me %%ARTIST%% - %%TITLE%%: %%WOOTS%%W/%%GRABS%%G/%%MEHS%%M.",
     
-    "mehSkip": "/me @%%NAME%% You're song is being skipped because it received %%MEHLIMIT%% mehs."
+    "mehSkip": "/me @%%NAME%% Your song is being skipped because it received %%MEHLIMIT%% mehs."
 }
