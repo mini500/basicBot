@@ -211,6 +211,8 @@
             filterChat: true,
             etaRestriction: false,
             welcome: true,
+            mehSkip: true,
+            mehSkipLimit: 10,
             opLink: null,
             rulesLink: null,
             themeLink: null,
@@ -767,6 +769,10 @@
             }
         },
         eventVoteupdate: function (obj) {
+            if(basicBot.settings.mehSkip && API.getScore().negative >= basicBot.settings.mehSkipLimit) {
+            	API.sendChat(subchat(basicBot.chat.mehSkip, {name: API.getDJ().username, mehLimit: basicBot.settings.mehSkipLimit}));
+            	return API.moderateForceSkip();
+            }
             for (var i = 0; i < basicBot.room.users.length; i++) {
                 if (basicBot.room.users[i].id === obj.user.id) {
                     if (obj.vote === 1) {
