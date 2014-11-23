@@ -133,4 +133,6 @@
     "website": "/me Please visit our website: %%LINK%%",
     "youtube": "/me [%%NAME%%] Subscribe to us on youtube: %%LINK%%",
     "songstatistics": "/me %%ARTIST%% - %%TITLE%%: %%WOOTS%%W/%%GRABS%%G/%%MEHS%%M."
+    
+    "mehSkip": "/me @%%NAME%% You're song is being skipped because it received %%MEHLIMIT%% mehs."
 }
