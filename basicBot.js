@@ -201,7 +201,8 @@
                 ["mix", "You played a mix, which is against the rules. "],
                 ["sound", "The song you played had bad sound quality or no sound. "],
                 ["nsfw", "The song you contained was NSFW (image or sound). "],
-                ["unavailable", "The song you played was not available for some users. "]
+                ["unavailable", "The song you played was not available for some users. "],
+                ["length", "The song you played was too long. "]
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
@@ -848,7 +849,7 @@
 		var min = Math.floor(basicBot.settings.maximumSongLength);
 		var sec = Math.floor((min - basicBot.settings.maximumSongLength) * -60);
                 API.sendChat(subChat(basicBot.chat.timelimit, {name: name, maxlengthmin: min, maxlengthsec: sec}));
-                API.moderateForceSkip();
+                API.sendChat("!lockskip length");
             }
             if (user.ownSong) {
                 API.sendChat(subChat(basicBot.chat.permissionownsong, {name: user.username}));
