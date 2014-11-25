@@ -849,7 +849,9 @@
 		var min = Math.floor(basicBot.settings.maximumSongLength);
 		var sec = Math.floor((min - basicBot.settings.maximumSongLength) * -60);
                 API.sendChat(subChat(basicBot.chat.timelimit, {name: name, maxlengthmin: min, maxlengthsec: sec}));
-                API.sendChat("!lockskip length");
+                setTimeout(function() {
+                	API.sendChat("!lockskip length");
+                }, 1000);
             }
             if (user.ownSong) {
                 API.sendChat(subChat(basicBot.chat.permissionownsong, {name: user.username}));
