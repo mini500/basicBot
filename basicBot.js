@@ -228,12 +228,7 @@ API.getWaitListPosition = function(id){
             mehSkip: true,
             mehSkipLimit: 10,
             opLink: null,
-            rulesLink: "►Only Nightcore, Nightstep or AMV's are allowed"
-			"►Maximum length of a song is 5 minutes"
-			"►Auto Join is Not Allowed"
-			"►No spamming, swearing, trolling, advertising"
-			"►No TYPING IN ALL CAPS"
-			"►NSFW content is not allowed ( Plug.dj is 13+),"
+            rulesLink: null,
             themeLink: null,
             fbLink: null,
             youtubeLink: null,
