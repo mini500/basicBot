@@ -180,7 +180,7 @@ API.getWaitListPosition = function(id){
     var basicBot = {
         version: "2.1.X",
         status: false,
-        name: "basicBot",
+        name: "STEBot",
         loggedInID: null,
         scriptLink: "https://rawgit.com/BrabbitX/basicBot-customization/master/extension.js",
         cmdLink: "http://git.io/245Ppg",
@@ -189,7 +189,7 @@ API.getWaitListPosition = function(id){
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
         settings: {
-            botName: "basicBot",
+            botName: "STEbot",
             language: "english",
             chatLink: "https://rawgit.com/BrabbitX/basicBot/master/lang/en.json",
             maximumAfk: 120,
@@ -238,8 +238,8 @@ API.getWaitListPosition = function(id){
             songstats: true,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://rawgit.com/BrabbitX/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
-                OP: "https://rawgit.com/BrabbitX/basicBot-customization/master/blacklists/ExampleOPlist.json"
+                NSFW: "https://rawgit.com/mini500/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
+                OP: "https://rawgit.com/mini500/basicBot-customization/master/blacklists/ExampleOPlist.json"
             }
         },
         room: {
